@@ -1,18 +1,17 @@
 package com.zerobase.cms.user.domain.model;
 
 import com.zerobase.cms.user.domain.SignUpForm;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.envers.AuditOverride;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Locale;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,7 +26,7 @@ public class Customer extends BaseEntity {
     private String name;
     private String password;
     private String phone;
-    private String birth;
+    private LocalDate birth;
 
     private LocalDateTime verifyExpiredAt;
     private String verificationCode;
