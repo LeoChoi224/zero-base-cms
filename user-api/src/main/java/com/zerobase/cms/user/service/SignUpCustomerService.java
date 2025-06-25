@@ -51,7 +51,7 @@ public class SignUpCustomerService {
         if (optionalCustomer.isPresent()) {
             Customer customer = optionalCustomer.get();
             customer.setVerificationCode(verificationCode);
-            customer.setVerifyExpiredAt(LocalDateTime.now());
+            customer.setVerifyExpiredAt(LocalDateTime.now().plusMinutes(10));
             return customer.getVerifyExpiredAt();
         }
         throw new CustomException(NOT_FOUND_USER);
