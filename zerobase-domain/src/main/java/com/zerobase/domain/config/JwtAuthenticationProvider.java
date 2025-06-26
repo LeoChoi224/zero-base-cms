@@ -1,7 +1,7 @@
 package com.zerobase.domain.config;
 
-import com.zerobase.domain.common.UserVo;
 import com.zerobase.domain.common.UserType;
+import com.zerobase.domain.common.UserVo;
 import com.zerobase.domain.util.Aes256Util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
