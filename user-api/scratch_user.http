@@ -1,0 +1,39 @@
+### 회원가입 (고객)
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "1996-01-01",
+  "email": "education.leochoi@gmail.com",
+  "name": "Leo",
+  "password": "pw",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 (고객)
+GET http://localhost:8081/signup/customer/verify?email=education.leochoi@gmail.com&code=VUgpuKTFVo
+
+### 로그인 (고객)
+POST http://localhost:8081/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "education.leochoi@gmail.com",
+  "password": "pw"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCRllDc2tLYjQxVC9oaFN1OTFVPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NTA5MjUyMjIsImV4cCI6MTc1MTAxMTYyMn0.k_k76fJrbeg6pQjqtvAyk-HoQK8-XASyeSuegsuS2zk
+
+### 잔액 변경 (고객)
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCRllDc2tLYjQxVC9oaFN1OTFVPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NTA5MjUyMjIsImV4cCI6MTc1MTAxMTYyMn0.k_k76fJrbeg6pQjqtvAyk-HoQK8-XASyeSuegsuS2zk
+
+{
+  "from": "server",
+  "message": "잔액 충전",
+  "money": 50000
+}
