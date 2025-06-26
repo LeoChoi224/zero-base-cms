@@ -8,9 +8,9 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 
 public class Aes256Util {
-    public static String alg = "AES/CBC/PKCS5Padding";
     private static final String KEY = "ZEROBASEKEYISZEROBASEKEY";
     private static final String IV = KEY.substring(0, 16);
+    public static String alg = "AES/CBC/PKCS5Padding";
 
     public static String encrypt(String text) {
         try {
