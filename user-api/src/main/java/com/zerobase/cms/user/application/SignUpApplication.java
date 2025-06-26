@@ -12,6 +12,7 @@ import com.zerobase.cms.user.service.seller.SellerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,6 +21,9 @@ import org.springframework.stereotype.Service;
 public class SignUpApplication {
 
     private final MailgunClient mailgunClient;
+    @Value("${mailgun.domain}")
+    private String mailgunDomain;
+
     private final SignUpCustomerService signUpCustomerService;
     private final SellerService sellerService;
 
@@ -45,7 +49,7 @@ public class SignUpApplication {
                     .subject("Verification Email!")
                     .text(getVerificationEmailBody(form.getEmail(), form.getName(), "customer", code))
                     .build();
-            mailgunClient.sendEmail(sendMailForm);
+            mailgunClient.sendEmail(mailgunDomain, sendMailForm);
             signUpCustomerService.changeCustomerValidateEmail(c.getId(), code);
             return "회원 가입에 성공하였습니다.";
         }
@@ -66,7 +70,7 @@ public class SignUpApplication {
                     .text(getVerificationEmailBody(form.getEmail(), form.getName(), "seller", code))
                     .build();
 
-            mailgunClient.sendEmail(sendMailForm);
+            mailgunClient.sendEmail(mailgunDomain, sendMailForm);
             sellerService.changeSellerValidateEmail(s.getId(), code);
 
             return "회원 가입에 성공하였습니다.";
