@@ -37,3 +37,27 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCR
   "message": "잔액 충전",
   "money": 50000
 }
+
+### 회원가입 (셀러)
+POST http://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "1996-01-01",
+  "email": "education.leochoi@gmail.com",
+  "name": "Leo",
+  "password": "pw",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 (셀러)
+GET http://localhost:8081/signup/seller/verify?email=education.leochoi@gmail.com&code=oMr2jdoTNk
+
+### 로그인 (셀러)
+POST http://localhost:8081/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "education.leochoi@gmail.com",
+  "password": "pw"
+}
