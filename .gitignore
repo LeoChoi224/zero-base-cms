@@ -37,6 +37,7 @@ out/
 .vscode/
 
 # application 설정 파일 무시
-user-api/src/main/resources/application.properties
-user-api/src/test/resources/application.properties
-src/main/resources/application.properties
+/user-api/src/main/resources/application.properties
+/user-api/src/test/resources/application.properties
+/order-api/src/main/resources/application.properties
+/src/main/resources/application.properties
