@@ -82,6 +82,10 @@ DELETE http://localhost:8082/seller/product/item?id=2
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCRllDc2tLYjQxVC9oaFN1OTFVPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzUwOTk1NjE3LCJleHAiOjE3NTEwODIwMTd9.S95Z8IXR2FeIFPTVc9m3ZsxYnvcMyIN2oQvI7PARM1Q
 
-### 이메일 인증 (고객)
-GET http://localhost:8082/signup/customer/verify?email=education.leochoi@gmail.com&code=VUgpuKTFVo
+### 상품 검색
+GET http://localhost:8082/search/product?name=나이키
+Content-Type: application/json
 
+### 상품 디테일 검색
+GET  http://localhost:8082/search/product/detail?productId=1
+Content-Type: application/json
