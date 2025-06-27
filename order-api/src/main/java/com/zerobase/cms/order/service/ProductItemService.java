@@ -8,7 +8,6 @@ import com.zerobase.cms.order.domain.repository.ProductItemRepository;
 import com.zerobase.cms.order.domain.repository.ProductRepository;
 import com.zerobase.cms.order.exception.CustomException;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.sql.Update;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,11 +37,19 @@ public class ProductItemService {
     @Transactional
     public ProductItem updateProductItem(Long sellerId, UpdateProductItemForm form) {
         ProductItem productItem = productItemRepository.findById(form.getId())
-                .filter(pi->pi.getSellerId().equals(sellerId))
-                .orElseThrow(()-> new CustomException(NOT_FOUND_ITEM));
+                .filter(pi -> pi.getSellerId().equals(sellerId))
+                .orElseThrow(() -> new CustomException(NOT_FOUND_ITEM));
         productItem.setName(form.getName());
         productItem.setCount(form.getCount());
         productItem.setPrice(form.getPrice());
         return productItem;
+    }
+
+    @Transactional
+    public void deleteProductItem(Long sellerId, Long productItemId) {
+        ProductItem productItem = productItemRepository.findById(productItemId)
+                .filter(pi -> pi.getSellerId().equals(sellerId))
+                .orElseThrow(() -> new CustomException(NOT_FOUND_ITEM));
+        productItemRepository.delete(productItem);
     }
 }
