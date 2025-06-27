@@ -1,8 +1,10 @@
 package com.zerobase.cms.order.exception;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
+import lombok.NoArgsConstructor;
 
 @Getter
 public class CustomException extends RuntimeException {
@@ -14,5 +16,15 @@ public class CustomException extends RuntimeException {
         super(errorCode.getDetail());
         this.errorCode = errorCode;
         this.status = errorCode.getHttpStatus().value();
+    }
+
+    @Getter
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class CustomExceptionResponse {
+        private int status;
+        private String code;
+        private String message;
     }
 }
