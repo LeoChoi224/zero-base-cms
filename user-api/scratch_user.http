@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### 이메일 인증 (고객)
-GET http://localhost:8081/signup/customer/verify?email=education.leochoi@gmail.com&code=VUgpuKTFVo
+GET http://localhost:8081/signup/customer/verify?email=education.leochoi@gmail.com&code=AuqJpCoQu2
 
 ### 로그인 (고객)
 POST http://localhost:8081/signIn/customer
@@ -25,12 +25,12 @@ Content-Type: application/json
 ### 회원 정보 조회 (고객)
 GET http://localhost:8081/customer/getInfo
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCRllDc2tLYjQxVC9oaFN1OTFVPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NTA5MjUyMjIsImV4cCI6MTc1MTAxMTYyMn0.k_k76fJrbeg6pQjqtvAyk-HoQK8-XASyeSuegsuS2zk
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCRllDc2tLYjQxVC9oaFN1OTFVPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NTEwMjUxMDMsImV4cCI6MTc1MTExMTUwM30.bnjV6eluuF-HWj1jg3JlHpx9Nmck-4-1lAciVO7EQqU
 
 ### 잔액 변경 (고객)
 POST http://localhost:8081/customer/balance
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCRllDc2tLYjQxVC9oaFN1OTFVPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NTA5MjUyMjIsImV4cCI6MTc1MTAxMTYyMn0.k_k76fJrbeg6pQjqtvAyk-HoQK8-XASyeSuegsuS2zk
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodllGWVo5eDJkd09vV3VYVGtPVGVtWVBCRllDc2tLYjQxVC9oaFN1OTFVPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3NTEwMjUxMDMsImV4cCI6MTc1MTExMTUwM30.bnjV6eluuF-HWj1jg3JlHpx9Nmck-4-1lAciVO7EQqU
 
 {
   "from": "server",
