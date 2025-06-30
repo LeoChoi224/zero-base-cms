@@ -41,9 +41,22 @@ public class CartApplication {
         return cartService.addCart(customerId, form);
     }
 
+    /**
+     * 엣지 케이스
+     *
+     * @param customerId
+     * @param cart
+     * @return
+     */
+    public Cart updateCart(Long customerId, Cart cart) {
+        // 실질적으로 변하는 데이터
+        // 상품의 삭제, 수량 변경
+        cartService.putCart(customerId, cart);
+        return getCart(customerId);
+    }
+
     // 1. 장바구니에 상품을 추가 했다.
     // 2. 상품의 가격이나 수량이 변동 된다.
-
     public Cart getCart(Long customerId) {
         Cart cart = refreshCart(cartService.getCart(customerId));
         cartService.putCart(cart.getCustomerId(), cart);
@@ -136,7 +149,7 @@ public class CartApplication {
                 cart.addMessage(builder.toString());
             }
         }
-        cartService.putCart(cart.getCustomerId(),cart);
+        cartService.putCart(cart.getCustomerId(), cart);
         return cart;
     }
 
@@ -145,7 +158,7 @@ public class CartApplication {
         Cart.Product cartProduct = cart.getProducts().stream()
                 .filter(p -> p.getId().equals(form.getId()))
                 .findFirst().orElse(Cart.Product.builder().id(product.getId())
-                .items(Collections.emptyList()).build());
+                        .items(Collections.emptyList()).build());
 
         Map<Long, Integer> cartItemCountMap = cartProduct.getItems().stream()
                 .collect(Collectors.toMap(Cart.ProductItem::getId, Cart.ProductItem::getCount));
