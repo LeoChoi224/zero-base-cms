@@ -48,6 +48,5 @@ public class RedisClient {
         } catch (JsonProcessingException e) {
             throw new CustomException(CART_CHANGE_FAIL);
         }
-
     }
 }
