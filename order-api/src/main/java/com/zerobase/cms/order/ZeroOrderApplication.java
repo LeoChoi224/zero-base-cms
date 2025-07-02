@@ -13,8 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaAuditing
 @SpringBootApplication
 @EnableFeignClients
-public class OrderApplication {
+public class ZeroOrderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(OrderApplication.class, args);
+        SpringApplication.run(ZeroOrderApplication.class, args);
     }
 }
