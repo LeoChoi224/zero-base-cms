@@ -41,3 +41,4 @@ out/
 /user-api/src/test/resources/application.properties
 /order-api/src/main/resources/application.properties
 /src/main/resources/application.properties
+**/application-prod.properties
