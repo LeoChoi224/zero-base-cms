@@ -76,7 +76,7 @@ public class CartApplication {
         cartService.putCart(customerId, null);
     }
 
-    private Cart refreshCart(Cart cart) {
+    protected Cart refreshCart(Cart cart) {
         // 1. 상품이나 상품의 아이템의 정보, 가격, 수량이 병경되어는지 체크하고
         // 그에 맞는 알람을 제공한다.
         // 2. 상품의 수량, 가격을 우리가 임의로 변경한다.
@@ -149,7 +149,6 @@ public class CartApplication {
                 cart.addMessage(builder.toString());
             }
         }
-        cartService.putCart(cart.getCustomerId(), cart);
         return cart;
     }
 
